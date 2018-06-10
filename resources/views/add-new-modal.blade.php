@@ -14,9 +14,12 @@
                             </div>
                             <div class="form-group">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="submit" value="Submit">
+                                <button type="submit">Submit</button>
                             </div>
                         </form>
+                        <div class="display_errors">
+
+                        </div>
                     </div>
                 </div>
             </div>
