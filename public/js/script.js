@@ -6,6 +6,7 @@ $(document).ready(function () {
 	$("#save_modal").submit(function (event) {
 		var formData = {
 			'name': $('input[name=name]').val(),
+			'age': $('input[name=age]').val(),
 			'_token': $('input[name=_token]').val()
 		};
 		$.ajax({

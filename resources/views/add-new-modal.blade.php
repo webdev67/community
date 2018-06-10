@@ -13,6 +13,10 @@
                                 <input type="text" name="name" />
                             </div>
                             <div class="form-group">
+                                <label for="name">Age:</label>
+                                <input type="text" name="age" />
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit">Submit</button>
                             </div>

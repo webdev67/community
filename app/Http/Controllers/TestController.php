@@ -33,6 +33,7 @@ class TestController extends Controller {
         $person = new Person();
         if ($person->validate($request->all())) {
             $person->name = request()->get("name");
+            $person->age = request()->get("age");
             $person->save();
             return response()->json(array('success' => true), 200);
         } else {

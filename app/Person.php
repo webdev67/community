@@ -10,7 +10,8 @@ class Person extends Model {
     //
     public $timestamps = false;
     private $rules = array(
-        'name' => 'max:3'
+        'name' => 'max:3',
+        'age'=>'numeric|min:5'
     );
     private $errors;
 
