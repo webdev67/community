@@ -1,4 +1,4 @@
-        <div id="save_modal" class="modal fade hidden" role="dialog">
+        <div id="save_modal" class="modal fade hidden" role="dialog" tabindex='-1'>
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
