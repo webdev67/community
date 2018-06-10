@@ -10,7 +10,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use App\Person;
 
 class TestController extends Controller {
@@ -30,26 +29,22 @@ class TestController extends Controller {
         return redirect('/');
     }
 
-    public function save(Request $request){
-        $validate = Validator::make($request->all(),[
-            'name'=>'max:4',
-        ]);
-        if($validate->passes()){
-            $person = new Person();
+    public function save(Request $request) {
+        $person = new Person();
+        if ($person->validate($request->all())) {
             $person->name = request()->get("name");
             $person->save();
-            return response(json_encode(array('success'=>true)),'200');
-        }
-        else{
-            $erros = [];
-            foreach($validate->errors()->all() as $error){
+            return response()->json(array('success' => true), 200);
+        } else {
+            $errors = [];
+            foreach ($person->errors()->all() as $error) {
                 $errors[] = $error;
             }
-            return response(json_encode(array('errors'=>$errors)),'400');
+            return response()->json(array('errors' => $errors), 400);
         }
     }
 
-    public function update(){
+    public function update() {
         $person = \App\Person::find(request()->get("item"));
         $person->name = request()->get("name");
         $person->save();

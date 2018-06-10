@@ -25,7 +25,8 @@ $(document).ready(function () {
 					f.responseJSON.errors.forEach(function (er) {
 						allErrors += f.responseJSON.errors + "<br />";
 					});
-					$(".display_errors").html(allErrors);
+
+					$("div[class='display_errors']").html(allErrors);
 				});
 		event.preventDefault();
 	});
